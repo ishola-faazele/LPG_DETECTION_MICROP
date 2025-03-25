@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "author": "Ishola Faazele Adebiyi",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-half",
+      "id": "bb1",
+      "top": 25.8,
+      "left": -390.8,
+      "attrs": {}
+    },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 19.2,
+      "left": 24.04,
+      "attrs": { "source": "sketch.ino" }
+    },
+    {
+      "type": "wokwi-gas-sensor",
+      "id": "gas1",
+      "top": 44,
+      "left": -400.3,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 111.6,
+      "left": -245.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 157.55,
+      "left": -220.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 60,
+      "left": -132.6,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "board-nokia-5110",
+      "id": "lcd1",
+      "top": 55.86,
+      "left": 226.62,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["esp:TX", "$serialMonitor:RX", "", []],
+    ["esp:RX", "$serialMonitor:TX", "", []],
+    ["esp:GND.1", "bb1:bn.25", "black", ["h-47.85", "v48"]],
+    ["esp:5V", "bb1:bp.25", "red", ["h-28.65", "v-9.6"]],
+    ["bb1:3b.j", "bb1:bp.2", "green", ["v0"]],
+    ["bb1:bn.3", "bb1:4b.j", "green", ["v0"]],
+    [
+      "bb1:6b.h",
+      "esp:32",
+      "green",
+      ["v0", "h76.8", "v-211.2", "h240", "v153.6"]
+    ],
+    ["bb1:15b.j", "bb1:bn.12", "green", ["v0"]],
+    ["bb1:22b.f", "esp:26", "green", ["v-144", "h134.4", "v124.8"]],
+    ["bb1:29b.i", "esp:27", "green", ["v0", "h67.2", "v-28.8"]],
+    ["bb1:bn.23", "bb1:28b.j", "green", ["v0"]],
+    ["gas1:AOUT", "bb1:6b.f", "", ["$bb"]],
+    ["gas1:DOUT", "bb1:5b.f", "", ["$bb"]],
+    ["gas1:GND", "bb1:4b.f", "", ["$bb"]],
+    ["gas1:VCC", "bb1:3b.f", "", ["$bb"]],
+    ["led1:A", "bb1:16b.g", "", ["$bb"]],
+    ["led1:C", "bb1:15b.g", "", ["$bb"]],
+    ["r1:1", "bb1:16b.h", "", ["$bb"]],
+    ["r1:2", "bb1:22b.h", "", ["$bb"]],
+    ["bz1:1", "bb1:28b.f", "", ["$bb"]],
+    ["bz1:2", "bb1:29b.f", "", ["$bb"]],
+    ["lcd1:VCC", "esp:3V3", "red", ["v63.23", "h115.2", "v-288", "h-374.4"]],
+    ["lcd1:CLK", "esp:18", "green", ["v63.23", "h-105.6", "v-153.6"]],
+    ["esp:19", "lcd1:DIN", "green", ["h48", "v124.8", "h86.4"]],
+    ["lcd1:DC", "esp:21", "green", ["v34.43", "h-105.6", "v-153.6", "h9.6"]],
+    ["esp:22", "lcd1:CE", "green", ["h28.8", "v230.4", "h76.8"]],
+    ["lcd1:RST", "esp:23", "green", ["v101.63", "h-96", "v-259.2"]],
+    ["esp:GND.2", "lcd1:GND", "black", ["v-28.8", "h288", "v230.4", "h-67.2"]]
+  ],
+  "dependencies": {}
+}
+
