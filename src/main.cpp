@@ -10,13 +10,6 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-#include <IPAddress.h>
-
-IPAddress primaryDNS(8, 8, 8, 8);
-IPAddress secondaryDNS(8, 8, 4, 4);
-IPAddress local_IP(192, 168, 1, 100);
-IPAddress gateway(192, 168, 1, 1);
-IPAddress subnet(255, 255, 255, 0);
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -86,7 +79,11 @@ void loop() {
 void checkLPGLevel() {
     int sensorValue = analogRead(MQ2pin);
     Blynk.virtualWrite(V0, sensorValue);
-    Serial.println(sensorValue);
+    Serial.print("Sensor Value: ");
+    Serial.print(sensorValue);
+
+    Serial.print("  |  Threshold: ");
+    Serial.println(LPG_THRESHOLD);
     bool isAlert = (sensorValue > LPG_THRESHOLD);
     
     digitalWrite(BuzzerPin, isAlert ? HIGH : LOW);
