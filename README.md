@@ -68,8 +68,8 @@ This project is an LPG (Liquefied Petroleum Gas) leak detection system developed
 
 - `src/main.cpp`: Contains the core logic for sensor reading, alarm activation, and Blynk integration.
 - `diagram.json`: Wokwi simulation setup file.
-- `.pio\build\esp32dev\firmware.bin`: Contains compiled binary
-- `.pio\build\esp32dev\firmware.hex`: Contains compiled firmware
+- `.pio\build\esp32dev\firmware.bin`: [generated after building] Contains compiled binary
+- `.pio\build\esp32dev\firmware.hex`: [generated after building]  Contains compiled firmware
 - `platformio.ini`: Contains project configurations.
 - `wokwi.toml`: Contains wokwi configurations.
 - `schematic.png`: Schematic diagram of the project.
