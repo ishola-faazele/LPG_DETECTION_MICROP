@@ -4,91 +4,133 @@
   "editor": "wokwi",
   "parts": [
     {
-      "type": "wokwi-breadboard-half",
-      "id": "bb1",
-      "top": 25.8,
-      "left": -390.8,
-      "attrs": {}
-    },
-    {
       "type": "board-esp32-devkit-c-v4",
       "id": "esp",
-      "top": 19.2,
-      "left": 24.04,
+      "top": 8.46,
+      "left": -147.1,
+      "rotate": 270,
       "attrs": { "source": "sketch.ino" }
     },
     {
       "type": "wokwi-gas-sensor",
       "id": "gas1",
-      "top": 44,
-      "left": -400.3,
+      "top": 216.8,
+      "left": -208.3,
       "rotate": 90,
       "attrs": {}
     },
     {
-      "type": "wokwi-led",
-      "id": "led1",
-      "top": 111.6,
-      "left": -245.8,
-      "attrs": { "color": "red" }
-    },
-    {
-      "type": "wokwi-resistor",
-      "id": "r1",
-      "top": 157.55,
-      "left": -220.8,
-      "attrs": { "value": "1000" }
-    },
-    {
       "type": "wokwi-buzzer",
       "id": "bz1",
-      "top": 60,
-      "left": -132.6,
+      "top": 204,
+      "left": -65.4,
       "attrs": { "volume": "0.1" }
     },
     {
-      "type": "board-nokia-5110",
-      "id": "lcd1",
-      "top": 55.86,
-      "left": 226.62,
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -64.06,
+      "left": -95.77,
+      "attrs": { "i2cAddress": "0x3D" }
+    },
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bargraph1",
+      "top": -72,
+      "left": -167.6,
+      "rotate": 180,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-gnd",
+      "id": "gnd1",
+      "top": 19.2,
+      "left": -183,
       "attrs": {}
+    },
+    {
+      "type": "wokwi-gnd",
+      "id": "gnd2",
+      "top": 326.4,
+      "left": -48.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": 528,
+      "left": -432,
+      "attrs": {
+        "text": "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": 192,
+      "left": -76.8,
+      "rotate": 90,
+      "attrs": {
+        "text": "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": -172.8,
+      "left": -422.4,
+      "attrs": {
+        "text": "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text4",
+      "top": 163.2,
+      "left": -768,
+      "rotate": 90,
+      "attrs": {
+        "text": "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+      }
     }
   ],
   "connections": [
     ["esp:TX", "$serialMonitor:RX", "", []],
     ["esp:RX", "$serialMonitor:TX", "", []],
-    ["esp:GND.1", "bb1:bn.25", "black", ["h-47.85", "v48"]],
-    ["esp:5V", "bb1:bp.25", "red", ["h-28.65", "v-9.6"]],
-    ["bb1:3b.j", "bb1:bp.2", "green", ["v0"]],
-    ["bb1:bn.3", "bb1:4b.j", "green", ["v0"]],
+    ["gas1:GND", "gnd2:GND", "black", ["v0"]],
+    ["gnd2:GND", "bz1:1", "black", ["v0"]],
+    ["bz1:2", "esp:27", "green", ["v0", "h28.4", "v-115.2", "h-76.8"]],
+    ["bargraph1:C10", "gnd1:GND", "green", ["h0"]],
+    ["bargraph1:C1", "gnd1:GND", "green", ["v0"]],
+    ["bargraph1:C2", "gnd1:GND", "green", ["h0"]],
+    ["bargraph1:C3", "gnd1:GND", "green", ["h0"]],
+    ["bargraph1:C4", "gnd1:GND", "green", ["h0"]],
+    ["bargraph1:C5", "gnd1:GND", "green", ["h0"]],
+    ["bargraph1:C6", "gnd1:GND", "green", ["h0"]],
+    ["bargraph1:C7", "gnd1:GND", "green", ["h0"]],
+    ["bargraph1:C8", "gnd1:GND", "green", ["h0"]],
+    ["bargraph1:C9", "gnd1:GND", "green", ["h0"]],
+    ["oled1:GND", "gnd1:GND", "black", ["v-28.8", "h-134.4"]],
+    ["esp:5V", "oled1:VCC", "red", ["v9.45", "h19.2", "v-240", "h-67.35"]],
+    ["esp:23", "bargraph1:A1", "green", ["v-9.6", "h28.8"]],
+    ["bargraph1:A2", "esp:19", "green", ["h9.6", "v48", "h19.2"]],
+    ["bargraph1:A3", "esp:18", "green", ["h9.6", "v57.6", "h28.8"]],
+    ["bargraph1:A4", "esp:5", "green", ["h9.6", "v67.2", "h38.4"]],
+    ["bargraph1:A5", "esp:17", "green", ["h9.6", "v76.81", "h48"]],
+    ["bargraph1:A6", "esp:16", "green", ["h9.6", "v86.41", "h57.6"]],
+    ["bargraph1:A7", "esp:4", "green", ["h9.6", "v96.01", "h67.2"]],
+    ["gas1:VCC", "esp:5V", "red", ["v9.6", "h68.1", "v-144", "h86.4", "v-9.6"]],
+    ["bargraph1:A9", "esp:2", "green", ["h9.6", "v115.21", "h0"]],
+    ["bargraph1:A10", "esp:15", "green", ["h9.6", "v124.81", "h115.2"]],
+    ["esp:0", "bargraph1:A8", "green", ["v-9.6", "h-76.8", "v-105.6"]],
+    ["esp:21", "oled1:SDA", "green", ["v-48", "h28.8", "v-96", "h67.2"]],
     [
-      "bb1:6b.h",
-      "esp:32",
+      "oled1:SCL",
+      "esp:22",
       "green",
-      ["v0", "h76.8", "v-211.2", "h240", "v153.6"]
+      ["v-9.6", "h-57.3", "v86.4", "h-28.8", "v38.4", "h-28.8"]
     ],
-    ["bb1:15b.j", "bb1:bn.12", "green", ["v0"]],
-    ["bb1:22b.f", "esp:26", "green", ["v-144", "h134.4", "v124.8"]],
-    ["bb1:29b.i", "esp:27", "green", ["v0", "h67.2", "v-28.8"]],
-    ["bb1:bn.23", "bb1:28b.j", "green", ["v0"]],
-    ["gas1:AOUT", "bb1:6b.f", "", ["$bb"]],
-    ["gas1:DOUT", "bb1:5b.f", "", ["$bb"]],
-    ["gas1:GND", "bb1:4b.f", "", ["$bb"]],
-    ["gas1:VCC", "bb1:3b.f", "", ["$bb"]],
-    ["led1:A", "bb1:16b.g", "", ["$bb"]],
-    ["led1:C", "bb1:15b.g", "", ["$bb"]],
-    ["r1:1", "bb1:16b.h", "", ["$bb"]],
-    ["r1:2", "bb1:22b.h", "", ["$bb"]],
-    ["bz1:1", "bb1:28b.f", "", ["$bb"]],
-    ["bz1:2", "bb1:29b.f", "", ["$bb"]],
-    ["lcd1:VCC", "esp:3V3", "red", ["v63.23", "h115.2", "v-288", "h-374.4"]],
-    ["lcd1:CLK", "esp:18", "green", ["v63.23", "h-105.6", "v-153.6"]],
-    ["esp:19", "lcd1:DIN", "green", ["h48", "v124.8", "h86.4"]],
-    ["lcd1:DC", "esp:21", "green", ["v34.43", "h-105.6", "v-153.6", "h9.6"]],
-    ["esp:22", "lcd1:CE", "green", ["h28.8", "v230.4", "h76.8"]],
-    ["lcd1:RST", "esp:23", "green", ["v101.63", "h-96", "v-259.2"]],
-    ["esp:GND.2", "lcd1:GND", "black", ["v-28.8", "h288", "v230.4", "h-67.2"]]
+    ["esp:33", "gas1:AOUT", "green", ["v153.45"]]
   ],
   "dependencies": {}
 }
-
