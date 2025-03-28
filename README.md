@@ -30,6 +30,7 @@ This project is an LPG (Liquefied Petroleum Gas) leak detection system developed
 - **Blynk IoT Dashboard** (Remote monitoring and control)
 
 ## Schematic and Connections
+![Image Description](https://github.com/ishola-faazele/LPG_DETECTION_MICROP/blob/main/Schematic_LPG_DETECTION_SCHEMATIC_2025-03-26.png)
 
 
 ## Software & Tools
