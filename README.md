@@ -2,7 +2,7 @@
 ## COLLEGE OF ENGINEERING  
 ### DEPARTMENT OF COMPUTER ENGINEERING 
 **COE 381 MICROPROCESSORS**  
-![School logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fseeklogo.com%2Fvector-logo%2F432012%2Fknust&psig=AOvVaw2lZ43UcwGWRey3GPsnSK5O&ust=1743268276018000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCf5MSirYwDFQAAAAAdAAAAABAE)
+![School logo](https://github.com/ishola-faazele/LPG_DETECTION_MICROP/blob/main/kwame-nkrumah-university-of-science-technology-logo-7C23198381-seeklogo.com.png)
 
 
 ## PROJECT: LPG LEAK DETECTION SYSTEM
