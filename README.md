@@ -29,6 +29,9 @@ This project is an LPG (Liquefied Petroleum Gas) leak detection system developed
 - **LED Bar** (Indicates LPG level)
 - **Blynk IoT Dashboard** (Remote monitoring and control)
 
+## Schematic and Connections
+
+
 ## Software & Tools
 
 - **PlatformIO** (Development environment)
